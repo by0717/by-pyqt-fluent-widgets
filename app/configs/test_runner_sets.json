@@ -1,0 +1,38 @@
+{
+  "1": [
+    "sn_validation_test"
+  ],
+  "2": [
+    "sn_validation_test"
+  ],
+  "3": [
+    "bandwidth_test",
+    "ping_test"
+  ],
+  "4": [
+    "sn_validation_test",
+    "bandwidth_test"
+  ],
+  "5": [
+    "ping_test",
+    "voltage_test"
+  ],
+  "6": [
+    "sn_validation_test",
+    "bandwidth_test",
+    "ping_test",
+    "voltage_test"
+  ],
+  "7": [
+    "sn_validation_test",
+    "bandwidth_test",
+    "ping_test",
+    "voltage_test"
+  ],
+  "8": [
+    "sn_validation_test",
+    "bandwidth_test",
+    "ping_test",
+    "voltage_test"
+  ]
+}

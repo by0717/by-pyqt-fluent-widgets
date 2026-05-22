@@ -1,0 +1,20 @@
+PushButton {
+    background-color: #2196F3;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px 5px 35px;  /* 上 右 下 左 */
+    text-align: left;
+}
+
+PushButton:hover {
+    background-color: #1976D2;
+}
+
+PushButton:pressed {
+    background-color: #0D47A1;
+}
+
+PushButton::icon {
+    position: absolute;
+    left: 10px;
+}

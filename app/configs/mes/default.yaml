@@ -1,0 +1,8 @@
+# MES 组合入口（根配置 defaults: - mes: default 指向本文件）
+# 先加载同组 XL_BY，再应用本文件：切换厂家请用 Hydra 覆盖 mes=XL_BY / mes=OTHER，勿改根 config.yaml
+defaults:
+  - XL_BY
+  - _self_
+
+# 逻辑默认厂家名（供业务代码读取；真实 URL/账号仍以 XL_BY.yaml 为主，可在下方按需覆盖）
+default_provider: XL_BY

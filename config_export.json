@@ -1,0 +1,232 @@
+{
+  "connection_info": {
+    "protocol": "telnet",
+    "host": "192.168.1.1",
+    "port": 23,
+    "username": "admin",
+    "password": "admin",
+    "timeout_ms": 3000,
+    "retry_count": 3,
+    "login_prompt": ">",
+    "separator": "|",
+    "end_char_return": "Immediate",
+    "ip_converter": "Range",
+    "ip_start": "192.168.1.2",
+    "ip_end": "192.168.1.9",
+    "ip_list": "",
+    "com_ports": "None",
+    "com_start": "",
+    "com_end": "",
+    "com_list": "",
+    "address_list": [
+      "192.168.1.2",
+      "192.168.1.3",
+      "192.168.1.4",
+      "192.168.1.5",
+      "192.168.1.6",
+      "192.168.1.7",
+      "192.168.1.8",
+      "192.168.1.9"
+    ]
+  },
+  "commands_info": [
+    {
+      "index": 1,
+      "command_type": "Character Command",
+      "command": "show version",
+      "expect": "Cisco",
+      "end_char": "#",
+      "judge_type": "Contains",
+      "match_type": "String Match",
+      "variable": "",
+      "execution": {
+        "timeout_ms": 5000,
+        "retry_count": 3,
+        "retry_delay_ms": 1000,
+        "wait_before_ms": 500,
+        "wait_after_ms": 1000,
+        "continue_on_failure": false
+      },
+      "variable_extraction": {
+        "enabled": true,
+        "variable_name": "device_version",
+        "pattern": "Version (\\\\d+\\\\.\\\\d+\\\\.\\\\d+)",
+        "match_group": 1
+      },
+      "condition": {
+        "enabled": false,
+        "condition_type": "always",
+        "variable_name": "",
+        "expected_value": "",
+        "pattern": ""
+      },
+      "parameters": {
+        "enabled": false,
+        "template": "",
+        "variables": {}
+      }
+    },
+    {
+      "index": 2,
+      "command_type": "Character Command",
+      "command": "show interfaces",
+      "expect": "up",
+      "end_char": "#",
+      "judge_type": "Contains",
+      "match_type": "String Match",
+      "variable": "",
+      "execution": {
+        "timeout_ms": 3000,
+        "retry_count": 2,
+        "retry_delay_ms": 500,
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "continue_on_failure": true
+      },
+      "variable_extraction": {
+        "enabled": true,
+        "variable_name": "interface_status",
+        "pattern": "(GigabitEthernet\\\\d+/\\\\d+)\\\\s+(up|down)",
+        "match_group": 2
+      },
+      "condition": {
+        "enabled": true,
+        "condition_type": "variable_exists",
+        "variable_name": "device_version",
+        "expected_value": "",
+        "pattern": ""
+      },
+      "parameters": {
+        "enabled": false,
+        "template": "",
+        "variables": {}
+      }
+    },
+    {
+      "index": 3,
+      "command_type": "Character Command",
+      "command": "show interface GigabitEthernet0/1",
+      "expect": "",
+      "end_char": "#",
+      "judge_type": "Contains",
+      "match_type": "String Match",
+      "variable": "",
+      "execution": {
+        "timeout_ms": 2000,
+        "retry_count": 1,
+        "retry_delay_ms": 300,
+        "wait_before_ms": 100,
+        "wait_after_ms": 300,
+        "continue_on_failure": false
+      },
+      "variable_extraction": {
+        "enabled": true,
+        "variable_name": "interface_ip",
+        "pattern": "Internet address is (\\\\d+\\\\.\\\\d+\\\\.\\\\d+\\\\.\\\\d+)",
+        "match_group": 1
+      },
+      "condition": {
+        "enabled": true,
+        "condition_type": "variable_equals",
+        "variable_name": "interface_status",
+        "expected_value": "up",
+        "pattern": ""
+      },
+      "parameters": {
+        "enabled": true,
+        "template": "show interface {interface_name}",
+        "variables": {
+          "interface_name": "GigabitEthernet0/1"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "command_type": "Character Command",
+      "command": "configure terminal",
+      "expect": "(config)#",
+      "end_char": "#",
+      "judge_type": "Contains",
+      "match_type": "Regex Match",
+      "variable": "",
+      "execution": {
+        "timeout_ms": 2000,
+        "retry_count": 1,
+        "retry_delay_ms": 500,
+        "wait_before_ms": 100,
+        "wait_after_ms": 200,
+        "continue_on_failure": false
+      },
+      "variable_extraction": {
+        "enabled": false,
+        "variable_name": "",
+        "pattern": "",
+        "match_group": 1
+      },
+      "condition": {
+        "enabled": true,
+        "condition_type": "variable_matches",
+        "variable_name": "device_version",
+        "expected_value": "",
+        "pattern": "^12\\\\."
+      },
+      "parameters": {
+        "enabled": false,
+        "template": "",
+        "variables": {}
+      }
+    },
+    {
+      "index": 5,
+      "command_type": "Character Command",
+      "command": "write memory",
+      "expect": "Building configuration",
+      "end_char": "#",
+      "judge_type": "Contains",
+      "match_type": "String Match",
+      "variable": "",
+      "execution": {
+        "timeout_ms": 10000,
+        "retry_count": 2,
+        "retry_delay_ms": 2000,
+        "wait_before_ms": 1000,
+        "wait_after_ms": 2000,
+        "continue_on_failure": true
+      },
+      "variable_extraction": {
+        "enabled": false,
+        "variable_name": "",
+        "pattern": "",
+        "match_group": 1
+      },
+      "condition": {
+        "enabled": true,
+        "condition_type": "variable_equals",
+        "variable_name": "configuration_changed",
+        "expected_value": true,
+        "pattern": ""
+      },
+      "parameters": {
+        "enabled": false,
+        "template": "",
+        "variables": {}
+      }
+    }
+  ],
+  "analysis": {
+    "total_commands": 5,
+    "command_types": [
+      "Character Command"
+    ],
+    "judge_types": [
+      "Contains"
+    ],
+    "match_types": [
+      "Regex Match",
+      "String Match"
+    ],
+    "commands_with_variable_extraction": 3,
+    "commands_with_condition": 4,
+    "commands_with_parameters": 1
+  }
+}

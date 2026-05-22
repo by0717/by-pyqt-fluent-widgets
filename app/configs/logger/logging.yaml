@@ -1,0 +1,38 @@
+# config/logging.yaml
+# 日志配置文件 - 简单实用版
+
+general:
+  app_name: "MyQTApp"
+  environment: "development"  # development, testing, production
+
+logging:
+  # 基础配置
+  level: "DEBUG"             # TRACE, DEBUG, INFO, WARNING, ERROR, CRITICAL
+  enable_console: true
+  enable_file: true
+  enable_qt: true
+
+  # 目录设置
+  log_dir: "log"            # 相对路径
+  temp_dir: "temp"
+  pass_dir: "log_pass"
+  fail_dir: "log_fail"
+
+  # 文件配置
+  rotation_size: "10 MB"     # 文件轮转大小
+  retention_days: 30         # 日志保留天数
+
+  # Qt界面显示配置
+  qt_log_format: "{time:HH:mm:ss} | {level:<7} | {message}"
+  qt_mode: "HYBRID"          # DIRECT, SIGNAL, CALLBACK, HYBRID
+
+  # 条码日志设置
+  barcode_prefix: "TEST"
+  timestamp_in_filename: true
+
+  # FTP上传配置
+  ftp_host: "192.168.1.100"
+  ftp_port: 21
+  ftp_username: "admin"
+  ftp_password: "admin"
+  ftp_dir: "/logs"

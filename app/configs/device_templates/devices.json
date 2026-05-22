@@ -1,0 +1,19 @@
+{
+  "devices": [
+    {
+      "address": "TCPIP0::192.168.1.100::INSTR",
+      "baud_rate": null,
+      "com_port": null,
+      "comm_method": "VISA",
+      "driver": null,
+      "gpib_address": null,
+      "ip_address": null,
+      "model": "N9000系列",
+      "name": "Keysight频谱分析仪",
+      "port": null,
+      "selected": false,
+      "status": "未初始化",
+      "type": "频谱分析仪"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+protocol: telnet
+connection:
+  host: 192.168.1.1
+  port: 23
+  username: root
+  password: yotc
+  timeout_ms: 3000
+  retry_count: 3
+  login_prompt: '/ #'
+  separator: '|'
+  end_char_return: Immediate
+  ip_converter: Range
+  ip_start: 192.168.1.2
+  ip_end: 192.168.1.9
+  ip_list: ''
+  com_ports: None
+  com_start: ''
+  com_end: ''
+  com_list: ''
+  address_list:
+  - 192.168.1.2
+  - 192.168.1.3
+  - 192.168.1.4
+  - 192.168.1.5
+  - 192.168.1.6
+  - 192.168.1.7
+  - 192.168.1.8
+  - 192.168.1.9
+commands:
+- command_type: Character Command
+  command: cat /proc/zxic/verdate
+  expect: '2025-12-17 15:17:49'
+  end_char: '/ #'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+  execution:
+    timeout_ms: 5000
+    retry_count: 0
+    retry_delay_ms: 1000
+    wait_before_ms: 0
+    wait_after_ms: 0
+    continue_on_failure: false
+  variable_extraction:
+    enabled: false
+    variable_name: ''
+    pattern: ''
+    match_group: 1
+  condition:
+    enabled: false
+    condition_type: always
+    variable_name: ''
+    expected_value: ''
+    pattern: ''
+  parameters:
+    enabled: false
+    template: ''
+    variables: {}
+- command_type: Character Command
+  command: ' yotc_test set_region_id 0'
+  expect: '[region_id=0, region_id=9]'
+  end_char: '/ #'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+  execution:
+    timeout_ms: 5000
+    retry_count: 0
+    retry_delay_ms: 1000
+    wait_before_ms: 0
+    wait_after_ms: 5000
+    continue_on_failure: false
+  variable_extraction:
+    enabled: true
+    variable_name: region_id
+    pattern: region_id=(\d+)
+    match_group: 1
+  condition:
+    enabled: false
+    condition_type: always
+    variable_name: ''
+    expected_value: ''
+    pattern: ''
+  parameters:
+    enabled: false
+    template: ''
+    variables: {}
+- command_type: Character Command
+  command: yotc_test set_ethernet_mac {$Mac}
+  expect: set_ethernet_mac=ok
+  end_char: '/ #'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+  execution:
+    timeout_ms: 5000
+    retry_count: 1
+    retry_delay_ms: 1000
+    wait_before_ms: 0
+    wait_after_ms: 1000
+    continue_on_failure: false
+  variable_extraction:
+    enabled: false
+    variable_name: ''
+    pattern: ''
+    match_group: 1
+  condition:
+    enabled: false
+    condition_type: always
+    variable_name: ''
+    expected_value: ''
+    pattern: ''
+  parameters:
+    enabled: true
+    template: yotc_test set_ethernet_mac {$Mac}
+    variables:
+      Mac: ''
+- command_type: Character Command
+  command: yotc_test set_xponmode combo_gpon
+  expect: set_xponmode=ok
+  end_char: '/ #'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+  execution:
+    timeout_ms: 5000
+    retry_count: 0
+    retry_delay_ms: 1000
+    wait_before_ms: 0
+    wait_after_ms: 1000
+    continue_on_failure: false
+  variable_extraction:
+    enabled: false
+    variable_name: ''
+    pattern: ''
+    match_group: 1
+  condition:
+    enabled: false
+    condition_type: always
+    variable_name: ''
+    expected_value: ''
+    pattern: ''
+  parameters:
+    enabled: false
+    template: ''
+    variables: {}

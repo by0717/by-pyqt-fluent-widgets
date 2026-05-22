@@ -1,0 +1,10 @@
+devices:
+  - name: by_device_test
+    type: 信号发生器
+    comm_method: VISA
+    description: 自定义设备模板 - by_device_test
+    created_time: '2024-01-01'
+    version: '1.0'
+    manufacturer: Litepoint
+    model: IQStream-5G
+    visa_resource: 192.168.100.254

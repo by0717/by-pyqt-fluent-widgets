@@ -1,0 +1,154 @@
+/* Black风格按钮样式 */
+PushButton {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #3c3c3c;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+}
+
+PushButton:hover {
+    background-color: #2d2d2d;
+    border: 1px solid #454545;
+}
+
+PushButton:pressed {
+    background-color: #000000;
+    border: 1px solid #505050;
+}
+
+PushButton:disabled {
+    background-color: #2d2d2d;
+    color: #666666;
+    border: 1px solid #3c3c3c;
+}
+
+/* 带图标的按钮样式 */
+PushButton::icon {
+    position: absolute;
+    left: 8px;
+}
+
+/* Primary按钮样式 */
+PrimaryPushButton {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+PrimaryPushButton:hover {
+    background-color: #444444;
+    border: 1px solid #666666;
+}
+
+PrimaryPushButton:pressed {
+    background-color: #000000;
+    border: 1px solid #777777;
+}
+
+PrimaryPushButton:disabled {
+    background-color: #2d2d2d;
+    color: #666666;
+    border: 1px solid #3c3c3c;
+}
+
+/* Transparent按钮样式 */
+TransparentPushButton {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+}
+
+TransparentPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+TransparentPushButton:pressed {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+TransparentPushButton:disabled {
+    color: #666666;
+}
+
+/* Toggle按钮样式 */
+TogglePushButton {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #3c3c3c;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+}
+
+TogglePushButton:hover {
+    background-color: #2d2d2d;
+    border: 1px solid #454545;
+}
+
+TogglePushButton:pressed {
+    background-color: #000000;
+    border: 1px solid #505050;
+}
+
+TogglePushButton:checked {
+    background-color: #333333;
+    border: 1px solid #555555;
+}
+
+TogglePushButton:checked:hover {
+    background-color: #444444;
+    border: 1px solid #666666;
+}
+
+TogglePushButton:disabled {
+    background-color: #2d2d2d;
+    color: #666666;
+    border: 1px solid #3c3c3c;
+}
+
+/* Pill按钮样式 */
+PillPushButton {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #3c3c3c;
+    border-radius: 15px;
+    padding: 6px 16px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+}
+
+PillPushButton:hover {
+    background-color: #2d2d2d;
+    border: 1px solid #454545;
+}
+
+PillPushButton:pressed {
+    background-color: #000000;
+    border: 1px solid #505050;
+}
+
+PillPushButton:checked {
+    background-color: #333333;
+    border: 1px solid #555555;
+}
+
+PillPushButton:disabled {
+    background-color: #2d2d2d;
+    color: #666666;
+    border: 1px solid #3c3c3c;
+}

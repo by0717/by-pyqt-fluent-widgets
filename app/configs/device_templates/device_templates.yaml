@@ -1,0 +1,18 @@
+Oscilloscope:
+  comm_method: VISA
+  description: 示波器示例模板
+  init_commands:
+    - command: '*IDN?'
+      wait_ms: 10
+  name: Oscilloscope
+  type: 示波器
+VISA通用设备:
+  comm_method: VISA
+  description: 通用VISA设备模板
+  init_commands:
+    - command: '*RST'
+      wait_ms: 100
+    - command: SYST:REM
+      wait_ms: 50
+  name: VISA通用设备
+  type: 通用设备

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"$env:USERPROFILE\\\\.claude\\\\skills\" -ErrorAction SilentlyContinue | Select-Object Name, PSIsContainer)",
+      "PowerShell(Get-ChildItem -Path \"$env:USERPROFILE\\\\.claude\" -ErrorAction SilentlyContinue | Select-Object Name)",
+      "WebFetch(domain:skills.sh)",
+      "Bash(python -c \"from app.utils.path_utils import Path_Config; print\\(Path_Config.test_configs_dir\\)\")"
+    ]
+  }
+}

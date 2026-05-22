@@ -1,0 +1,42 @@
+# UI 配置
+# 从 QConfig 迁移的 UI 相关配置
+
+# 主窗口配置
+main_window:
+  # Mica 效果 (Windows 11)
+  mica_enabled: true
+  
+  # DPI 缩放
+  # 可选值: Auto, 1, 1.25, 1.5, 1.75, 2
+  dpi_scale: Auto
+  
+  # 语言设置
+  # 可选值: zh_CN (简体中文), zh_HK (繁体中文), en_US (英语), Auto (自动)
+  language: zh_CN
+
+# 主题配置
+theme:
+  # 主题模式
+  # 可选值: Light, Dark, Auto
+  mode: Auto
+  
+  # 主题颜色
+  color: "#0078d4"
+
+# 材质配置
+material:
+  # 亚克力模糊半径 (0-40)
+  blur_radius: 15
+
+# 文件夹配置
+folders:
+  # 音乐文件夹列表
+  music: []
+  
+  # 下载文件夹
+  download: "app/download"
+
+# 更新配置
+update:
+  # 启动时检查更新
+  check_at_startup: true

@@ -1,0 +1,45 @@
+{
+  "name": "示例配置",
+  "version": "1.0",
+  "windows": [
+    {
+      "window_id": 1,
+      "target_ip": "192.168.1.101",
+      "protocol": "Telnet",
+      "port": 23,
+      "scanner_port": "COM3",
+      "scanner_timeout_ms": 5000,
+      "instruments": [
+        {"name": "电源-A", "address": "GPIB0::1::INSTR"}
+      ]
+    },
+    {
+      "window_id": 2, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    },
+    {
+      "window_id": 3, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    },
+    {
+      "window_id": 4, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    },
+    {
+      "window_id": 5, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    },
+    {
+      "window_id": 6, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    },
+    {
+      "window_id": 7, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    },
+    {
+      "window_id": 8, "target_ip": "", "protocol": "Telnet", "port": 23,
+      "scanner_port": "", "scanner_timeout_ms": 5000, "instruments": []
+    }
+  ]
+}

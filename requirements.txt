@@ -1,0 +1,23 @@
+# GUI Framework
+PySide6>=6.5.0
+qfluentwidgets>=1.3.0
+
+# Configuration
+omegaconf>=2.3.0
+hydra-core>=1.3.0
+PyYAML>=6.0
+
+# Logging
+loguru>=0.7.0
+
+# MES Integration
+requests>=2.28.0
+xmltodict>=0.13.0
+
+# Protocol Clients
+telnetlib3>=2.0.0
+paramiko>=3.0.0
+pyserial>=3.5
+
+# VISA Instrument Control (optional — required for GPIB/VISA device control)
+pyvisa>=1.13.0

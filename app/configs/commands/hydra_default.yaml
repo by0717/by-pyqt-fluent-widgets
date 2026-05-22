@@ -1,0 +1,36 @@
+# Normalized: ensured 'protocol' exists and commands are a list
+protocol: telnet
+connection:
+  host: 192.168.1.100
+  port: 23
+  username: admin
+  password: admin
+  timeout_ms: 3000
+  retry_count: 3
+  login_prompt: '>'
+  separator: '|'
+  end_char_return: Immediate
+  ip_converter: None
+  ip_start: 192.168.1.1
+  ip_end: 192.168.1.10
+  ip_list: ''
+  com_ports: None
+  com_start: ''
+  com_end: ''
+  com_list: ''
+  address_list: []
+commands:
+- command_type: Character Command
+  command: show version
+  expect: Cisco
+  end_char: '#'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+- command_type: Character Command
+  command: show interfaces
+  expect: up
+  end_char: '#'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''

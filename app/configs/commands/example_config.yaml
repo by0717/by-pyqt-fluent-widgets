@@ -1,0 +1,79 @@
+protocol: telnet
+connection:
+  host: 192.168.1.100
+  port: 23
+  username: admin
+  password: admin
+  timeout_ms: 3000
+  retry_count: 3
+  login_prompt: '>'
+  separator: '|'
+  end_char_return: Immediate
+  ip_converter: None
+  ip_start: 192.168.1.1
+  ip_end: 192.168.1.10
+  ip_list: ''
+  com_ports: None
+  com_start: ''
+  com_end: ''
+  com_list: ''
+  address_list: []
+commands:
+- command_type: Character Command
+  command: show version
+  expect: Cisco
+  end_char: '#'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+  execution:
+    timeout_ms: 5000
+    retry_count: 2
+    retry_delay_ms: 1000
+    wait_before_ms: 0
+    wait_after_ms: 0
+    continue_on_failure: false
+  variable_extraction:
+    enabled: false
+    variable_name: ''
+    pattern: ''
+    match_group: 1
+  condition:
+    enabled: false
+    condition_type: always
+    variable_name: ''
+    expected_value: ''
+    pattern: ''
+  parameters:
+    enabled: false
+    template: ''
+    variables: {}
+- command_type: Character Command
+  command: show interfaces
+  expect: up
+  end_char: '#'
+  judge_type: Contains
+  match_type: String Match
+  variable: ''
+  execution:
+    timeout_ms: 5000
+    retry_count: 0
+    retry_delay_ms: 1000
+    wait_before_ms: 0
+    wait_after_ms: 0
+    continue_on_failure: false
+  variable_extraction:
+    enabled: false
+    variable_name: ''
+    pattern: ''
+    match_group: 1
+  condition:
+    enabled: false
+    condition_type: always
+    variable_name: ''
+    expected_value: ''
+    pattern: ''
+  parameters:
+    enabled: false
+    template: ''
+    variables: {}

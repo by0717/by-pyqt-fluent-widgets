@@ -1,0 +1,19 @@
+base_url: http://10.50.1.148/MESAPI/Common/Call
+rescode: ATP1-A2001
+user_code: XL0155
+user_pwd: XL0155
+mo_code: SCJG-20240815-0035
+description: XL_BY MES系统
+field_mappings:
+- mes_field: Mac
+  local_field: mac_address
+  data_type: string
+- mes_field: GponSN
+  local_field: gpon_sn
+  data_type: string
+- mes_field: LotId
+  local_field: lot_id
+  data_type: string
+- mes_field: MOId
+  local_field: mo_id
+  data_type: string

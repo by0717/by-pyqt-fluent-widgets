@@ -1,0 +1,22 @@
+# 扫描枪配置
+scanner:
+  # 跳转指令配置
+  jump_commands:
+    # 格式: 指令前缀: [面板编号列表]
+    '#': [1, 2, 3, 4, 5, 6, 7, 8]
+  
+  # 扫描枪输入设置
+  input:
+    timeout_ms: 800           # 超时时间(毫秒)
+    use_enter_as_end: true    # 是否使用回车作为输入结束标志
+    auto_start_test: true     # 扫描SN后是否自动开始测试
+    
+  # 焦点管理
+  focus:
+    remember_last_panel: true  # 记住上次使用的面板
+    default_panel: 1           # 默认面板
+    
+  # 调试设置
+  debug:
+    enable_logging: true
+    log_level: "INFO"  # 可选值: DEBUG, INFO, WARNING, ERROR, CRITICAL

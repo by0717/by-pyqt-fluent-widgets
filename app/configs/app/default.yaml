@@ -1,0 +1,4 @@
+# Normalized: checked app defaults
+window_count: 8
+scanner_timeout_ms: 50
+# 还可添加其他应用级默认配置，如主题、日志等级等。
